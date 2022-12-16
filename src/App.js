@@ -16,11 +16,20 @@ function App() {
     } catch (error){
       console.log("Error",error)
     }
-    setPokemons(response);
+    response.push(...response);
+    setPokemons(shuffleArray(response));
   }
   fetchData();
   },[])
   
+  const shuffleArray = (arr) => {
+    for(let i = arr.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+
+    return arr;
+  }
 
   const handleClick =(cardContainer) =>{
     cardContainer.current.firstChild.classList.toggle("flip");
@@ -28,11 +37,11 @@ function App() {
 
   const getRandomIntInclusive = () => {
     const numPokemons = 139;
-    const result = Math.floor(Math.random() * numPokemons);
+    const result = Math.floor(Math.random() * numPokemons) + 1;
 
     var endpoints =[];
 
-    for(let i=result;i<result+12;i++){
+    for(let i=result;i<result+6;i++){
       endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
     }
     return endpoints;
@@ -48,9 +57,9 @@ function App() {
       <main>
         <section>
           {pokemons.length > 0 &&
-            pokemons.map((pokemon) => 
+            pokemons.map((pokemon,key) => 
              <Card handleClick={handleClick}
-             pokemon={pokemon} key={pokemon.id}/> 
+             pokemon={pokemon} key={key}/> 
             )
           }
         </section>
