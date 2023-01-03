@@ -2,6 +2,7 @@ import { useState,useEffect} from "react";
 import Card from "./components/layout/Card";
 
 function App() {
+  let auxCardContainer = "" , auxName = "";
 
   const [pokemons,setPokemons] = useState([]);
 
@@ -13,7 +14,7 @@ function App() {
        urls.map(url => fetch(url)
         .then(res => res.json()))
         )
-    } catch (error){
+    } catch(error){
       console.log("Error",error)
     }
     response.push(...response);
@@ -31,8 +32,32 @@ function App() {
     return arr;
   }
 
-  const handleClick =(cardContainer) =>{
-    cardContainer.current.firstChild.classList.toggle("flip");
+  const handleClick = (cardContainer, name) =>{
+
+    cardContainer.current.firstChild.classList.add("flip");
+    
+   if(auxName !== ""){
+      if(auxName === name){
+        console.log(name+"-"+auxName);
+        auxName = "";
+        auxCardContainer.style.pointerEvents = "none";
+        cardContainer.current.firstChild.style.pointerEvents = "none";
+      }else{
+       setTimeout(() => {
+          auxName = "";
+          auxCardContainer.classList.remove("flip");
+         
+          cardContainer.current.firstChild.classList.remove("flip");
+          
+       },1200);
+      }
+    }
+    else{
+      auxName = name;
+      auxCardContainer = cardContainer.current.firstChild;
+    }
+    console.log("-"+auxName+"-");
+
   }
 
   const getRandomIntInclusive = () => {
@@ -63,6 +88,7 @@ function App() {
             )
           }
         </section>
+        <div className="message"><p>Errou</p></div>
       </main>
     </div>
   );

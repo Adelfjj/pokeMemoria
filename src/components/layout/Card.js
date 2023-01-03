@@ -7,7 +7,7 @@ function Card ({handleClick, pokemon}){
 
     const clickCard = (e) => {
         e.preventDefault();
-        handleClick(cardContainer);
+        handleClick(cardContainer,pokemon.name);
     }
     return(
         <div className="mainContainer" ref={cardContainer}>

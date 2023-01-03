@@ -17,6 +17,15 @@ body, html , #root{
 }
 main{
   margin-top: 20px;
+  position: relative;
+}
+main .message{
+  position: absolute;
+  top:35%;
+  left: 42%;
+  background-color: aliceblue;
+  padding: 20px 50px;
+  display: none;
 }
 main section{
  /* display: flex;
