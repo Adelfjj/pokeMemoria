@@ -76,10 +76,10 @@ function App() {
 
   return (
     <div className="app">
-      <header className="appHeader">
-       <h1>Jogo da memória POKEMON</h1>
-      </header>
       <main>
+        <header className="appHeader">
+          <h1>Jogo da memória POKEMON</h1>
+        </header>
         <section>
           {pokemons.length > 0 &&
             pokemons.map((pokemon,key) => 

@@ -8,16 +8,19 @@ body, html , #root{
   color: rgb(0, 0, 0);
 }
 .app{
-  width: 800px;
-  margin: 20px auto;
+  width: 565px;
+  height: 100vh;
+  margin: 10px auto;
   text-align: center;
+  overflow: hidden;
 }
-.app header.appHeader h1{
-  margin-bottom: 50px;
+.app main header.appHeader{
+  margin-bottom: 30px;
 }
 main{
-  margin-top: 20px;
   position: relative;
+  height: 100%;
+  width: 100%;
 }
 main .message{
   position: absolute;
@@ -39,4 +42,6 @@ main section{
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 15px;
     grid-row-gap: 15px;   
+    height: 100%;
+    width: 100%;
 }

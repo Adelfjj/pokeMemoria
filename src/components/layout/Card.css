@@ -26,9 +26,7 @@
 
 .mainContainer{
     position: relative;
-    width: 180px;
-    height: 120px;
-    min-width: 100px;
+    height: 25vh;
 }
 .theCard{
     position: absolute;
@@ -54,16 +52,22 @@
     cursor: pointer;
     font-size: 0.7em;
     border-radius: 15px;
-    background-color: rgb(193, 211, 236);
-    padding: 10px;
+    background-color: #182552;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
+.theFront img{
+    width: 92%;
+ }
 .theBack img{
-   width: 50%;
+   width: 70%;
+   background-color: #253364;
+   border-radius: 20px;
 }
 .theBack{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -75,24 +79,28 @@
     cursor: pointer;
     font-size: 0.7em;
     border-radius: 15px;
-    background-color: rgb(193, 211, 236);
-    padding: 10px;
+    background-color:#182552;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-
+.theBack div div{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
 .theBack h2{
     text-transform: capitalize;
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 4px;
+    margin-bottom: 7px;
+    color:#fdc903;
 }
 .theBack p{
-    background-color: gray;
+    background-color:#3c60ad;
     border-radius: 5px;
     margin-bottom: 5px;
+    padding: 3px;
+    color: #182552;
+    text-transform: uppercase;
 }
 
-.correct{
-    background-color: #1bc152;
-}
 
