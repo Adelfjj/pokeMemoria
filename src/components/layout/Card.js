@@ -5,8 +5,7 @@ import frontCard from "../../img/front.png";
 function Card ({handleClick, pokemon}){
     const cardContainer = useRef(null);
 
-    const clickCard = (e) => {
-        e.preventDefault();
+    const clickCard = () => {  
         handleClick(cardContainer,pokemon.name);
     }
     return(
