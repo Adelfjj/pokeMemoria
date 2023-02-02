@@ -40,13 +40,14 @@ function App() {
       if(auxName === name){
         console.log(name+"-"+auxName);
         auxName = "";
-        auxCardContainer.style.pointerEvents = "none";
+        auxCardContainer.firstChild.style.pointerEvents = "none";
         cardContainer.current.firstChild.style.pointerEvents = "none";
+        cardContainer.current.classList.add("ok");
+        auxCardContainer.firstChild.classList.add("ok");
       }else{
        setTimeout(() => {
           auxName = "";
-          auxCardContainer.classList.remove("flip");
-         
+          auxCardContainer.firstChild.classList.remove("flip");
           cardContainer.current.firstChild.classList.remove("flip");
           
        },1200);
@@ -54,9 +55,8 @@ function App() {
     }
     else{
       auxName = name;
-      auxCardContainer = cardContainer.current.firstChild;
+      auxCardContainer = cardContainer.current;
     }
-    console.log("-"+auxName+"-");
 
   }
 
@@ -71,8 +71,6 @@ function App() {
     }
     return endpoints;
   }
-
-  console.log(pokemons)
 
   return (
     <div className="app">
