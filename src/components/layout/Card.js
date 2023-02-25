@@ -6,7 +6,11 @@ function Card ({handleClick, pokemon}){
     const cardContainer = useRef(null);
 
     const clickCard = () => {  
-        handleClick(cardContainer,pokemon.name);
+        //Se o length for igual a 2 então o card esta virado
+        // e não pode ser clicado novamente
+        if(cardContainer.current.firstChild.classList.length !== 2){
+            handleClick(cardContainer,pokemon.name);
+        }
     }
     return(
         <div className="mainContainer" ref={cardContainer}>

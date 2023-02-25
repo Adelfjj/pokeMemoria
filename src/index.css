@@ -16,6 +16,8 @@ body, html , #root{
 }
 .app main header.appHeader{
   margin-bottom: 30px;
+  background-color: beige;
+  font-size: 12px;
 }
 main{
   position: relative;
@@ -44,4 +46,5 @@ main section{
     grid-row-gap: 15px;   
     height: 100%;
     width: 100%;
+    background-color: aliceblue;
 }

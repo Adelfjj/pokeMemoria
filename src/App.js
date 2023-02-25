@@ -33,31 +33,24 @@ function App() {
   }
 
   const handleClick = (cardContainer, name) =>{
-
     cardContainer.current.firstChild.classList.add("flip");
     
    if(auxName !== ""){
       if(auxName === name){
-        console.log(name+"-"+auxName);
-        auxName = "";
-        auxCardContainer.firstChild.style.pointerEvents = "none";
-        cardContainer.current.firstChild.style.pointerEvents = "none";
         cardContainer.current.classList.add("ok");
-        auxCardContainer.firstChild.classList.add("ok");
+        auxCardContainer.classList.add("ok");
       }else{
        setTimeout(() => {
-          auxName = "";
           auxCardContainer.firstChild.classList.remove("flip");
           cardContainer.current.firstChild.classList.remove("flip");
-          
        },1200);
       }
+      auxName = "";
     }
     else{
       auxName = name;
       auxCardContainer = cardContainer.current;
     }
-
   }
 
   const getRandomIntInclusive = () => {
